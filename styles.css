@@ -59,6 +59,11 @@ body {
   letter-spacing: 0.02em;
 }
 
+.ku-logo-trigger {
+  border: 0;
+  cursor: pointer;
+}
+
 .brand-text {
   font-weight: 600;
 }
@@ -176,6 +181,50 @@ body {
 
 .mobile-nav {
   display: none;
+}
+
+.profile-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.profile-popup-card {
+  width: min(92vw, 340px);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(2, 6, 23, 0.22);
+  padding: 1rem 1rem 1.1rem;
+  position: relative;
+}
+
+.profile-popup-close {
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  font-size: 1.35rem;
+  line-height: 1;
+  position: absolute;
+  right: 0.7rem;
+  top: 0.55rem;
+  cursor: pointer;
+}
+
+.profile-popup-name {
+  margin: 0;
+  padding-right: 1.5rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.profile-popup-email {
+  margin: 0.32rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .sr-only {

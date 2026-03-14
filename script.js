@@ -59,6 +59,10 @@ const grid = document.querySelector('#courses-grid');
 const template = document.querySelector('#course-card-template');
 const menuToggle = document.querySelector('#menu-toggle');
 const mobileAccountMenu = document.querySelector('#mobile-account-menu');
+const desktopLogoTrigger = document.querySelector('#desktop-logo-trigger');
+const mobileLogoTrigger = document.querySelector('#mobile-logo-trigger');
+const profilePopup = document.querySelector('#profile-popup');
+const profilePopupClose = document.querySelector('#profile-popup-close');
 
 courses.forEach((course) => {
   const clone = template.content.cloneNode(true);
@@ -91,5 +95,33 @@ if (menuToggle && mobileAccountMenu) {
     mobileAccountMenu.setAttribute('hidden', '');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', 'Open account menu');
+  });
+}
+
+if (profilePopup) {
+  const openProfilePopup = () => {
+    profilePopup.removeAttribute('hidden');
+  };
+
+  const closeProfilePopup = () => {
+    profilePopup.setAttribute('hidden', '');
+  };
+
+  if (desktopLogoTrigger) {
+    desktopLogoTrigger.addEventListener('click', openProfilePopup);
+  }
+
+  if (mobileLogoTrigger) {
+    mobileLogoTrigger.addEventListener('click', openProfilePopup);
+  }
+
+  if (profilePopupClose) {
+    profilePopupClose.addEventListener('click', closeProfilePopup);
+  }
+
+  profilePopup.addEventListener('click', (event) => {
+    if (event.target === profilePopup) {
+      closeProfilePopup();
+    }
   });
 }
