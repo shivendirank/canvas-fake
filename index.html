@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KU Course Dashboard</title>
+    <meta
+      name="description"
+      content="Responsive Canvas-style dashboard for desktop and mobile"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="mobile-topbar" aria-label="Mobile top bar">
+      <div class="mobile-brand" aria-label="KU logo">KU</div>
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-account-menu"
+        aria-label="Open account menu"
+      >
+        ☰
+      </button>
+    </header>
+
+    <section
+      id="mobile-account-menu"
+      class="mobile-account-menu"
+      aria-label="Account menu"
+      hidden
+    >
+      <div class="account-name">Arya Karthikeyan Vasudevan</div>
+      <div class="account-email">a497v111@ku.edu</div>
+      <div class="account-actions">
+        <button type="button" class="account-action-btn">Files</button>
+        <button type="button" class="account-action-btn">Settings</button>
+        <button type="button" class="account-action-btn">Help</button>
+        <button type="button" class="account-action-btn">Change User</button>
+        <button type="button" class="account-action-btn">Log Out</button>
+      </div>
+    </section>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <span class="brand-mark">KU</span>
+          <span class="brand-text">Canvas</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a class="nav-item active" href="#" aria-current="page">Dashboard</a>
+          <a class="nav-item" href="#">Courses</a>
+          <a class="nav-item" href="#">Groups</a>
+          <a class="nav-item" href="#">Calendar</a>
+          <a class="nav-item" href="#">Inbox</a>
+          <a class="nav-item" href="#">History</a>
+          <a class="nav-item" href="#">Help</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <section class="announcement" aria-label="Campus announcement">
+          <p>
+            Student Surveys of Teaching (SSTs) are open March 4–15. Complete your
+            surveys via your Course Evaluations dashboard.
+          </p>
+        </section>
+
+        <header class="topbar">
+          <h1>Dashboard</h1>
+          <p>Spring 2026 + Fall 2025 courses</p>
+        </header>
+
+        <section class="courses-section" aria-labelledby="courses-heading">
+          <h2 id="courses-heading" class="sr-only">Current Classes</h2>
+          <div id="courses-grid" class="courses-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a class="mobile-nav-item active" href="#" aria-current="page">Dashboard</a>
+      <a class="mobile-nav-item" href="#">Courses</a>
+      <a class="mobile-nav-item" href="#">Calendar</a>
+      <a class="mobile-nav-item" href="#">Inbox</a>
+    </nav>
+
+    <template id="course-card-template">
+      <article class="course-card">
+        <div class="course-banner"></div>
+        <div class="course-content">
+          <h3 class="course-title"></h3>
+          <p class="course-subtitle"></p>
+          <p class="course-term"></p>
+          <div class="course-actions" aria-hidden="true">
+            <span class="course-action">📄</span>
+            <span class="course-action">📁</span>
+            <span class="course-action">📢</span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
